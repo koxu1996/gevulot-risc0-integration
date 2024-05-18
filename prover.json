@@ -6,7 +6,7 @@
     "RUST_BACKTRACE": "1",
     "RUST_LOG": "debug"
   },
-  "Program":"my-prover",
+  "Program":"gevulot-test",
   "Mounts": {
     "%1": "/workspace"
   }
