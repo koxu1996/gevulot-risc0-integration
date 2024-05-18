@@ -4,3 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+gevulot-shim = { git = "https://github.com/gevulotnetwork/gevulot", package = "gevulot-shim" }
