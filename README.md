@@ -21,6 +21,19 @@ cargo run --release
 
 ---
 
-Prepare input data.
+## Workload - offchain demo
 
-cargo run --release -p example-workload-input
+### Build Risc0 guest
+
+```sh
+$ cd ./example-workload-guest
+$ cargo build --release
+$ cp ./target/riscv-guest/riscv32im-risc0-zkvm-elf/release/square_check_guest /tmp/workload-guest.bin
+$ cd ..
+```
+
+### Prepare input data
+
+```sh
+$ cargo run --release -p example-workload-input > /tmp/workload-input.bin
+```

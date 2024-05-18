@@ -1,6 +1,13 @@
-[workspace]
-resolver = "2"
-members = ["methods"]
+[package]
+name = "example-workload-guest"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+risc0-build = { version = "0.19.1" }
+
+[package.metadata.risc0]
+methods = ["guest"]
 
 # Always optimize; building and running the guest takes much longer without optimization.
 [profile.dev]

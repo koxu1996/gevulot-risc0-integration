@@ -6,6 +6,10 @@ members = [
   "example-workload-input",
 ]
 
+exclude = [
+  "example-workload-guest"
+]
+
 [workspace.package]
 name = "gevulot-test"
 version = "0.1.0"
