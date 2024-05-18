@@ -18,3 +18,9 @@ ops build ./gevulot-test -c prover.json
 cd ./risc0-hello-world
 cargo run --release
 ```
+
+---
+
+Prepare input data.
+
+cargo run --release -p example-workload-input
