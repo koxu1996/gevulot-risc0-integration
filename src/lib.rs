@@ -1,5 +1,7 @@
 use risc0_zkvm::{default_prover, ExecutorEnv};
 
+pub mod cli;
+
 pub fn proof_logic() {
     let env = ExecutorEnv::builder();
     // env.write_slice(arg1.serialize())

@@ -44,26 +44,10 @@ fn decode_hex_strings(hex_strings: Vec<String>) -> Result<Vec<Vec<u8>>, AppError
         .collect()
 }
 
-#[derive(Parser, Debug)]
-#[command(version, about, long_about = None)]
-struct Args {
-    /// Path to Risc0 guest (ELF file).
-    #[arg(short, long)]
-    guest: String,
-
-    /// Path to JSON with guest args.
-    #[arg(short, long)]
-    input: String,
-
-    /// Destination path for saving proof.
-    #[arg(short, long)]
-    output: String,
-}
-
 fn main() -> anyhow::Result<()> {
     println!("Hello!");
 
-    let args = Args::parse();
+    let args = gevulot_test::cli::Args::parse();
 
     let guest_elf = read_file_to_bytes(&args.guest)?;
 

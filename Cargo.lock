@@ -852,6 +852,7 @@ dependencies = [
 name = "gevulot-test"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "bincode",
  "clap",
  "gevulot-shim",
@@ -859,6 +860,7 @@ dependencies = [
  "risc0-zkvm",
  "serde",
  "serde_json",
+ "thiserror",
 ]
 
 [[package]]
