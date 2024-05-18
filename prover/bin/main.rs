@@ -1,5 +1,5 @@
 use clap::Parser;
-use gevulot_test::{cli, proof_logic};
+use prover::{cli, proof_logic};
 
 fn main() -> anyhow::Result<()> {
     let args = cli::Args::parse();

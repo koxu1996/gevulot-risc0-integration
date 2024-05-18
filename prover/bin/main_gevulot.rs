@@ -2,7 +2,7 @@ use std::{error::Error, result::Result};
 
 use clap::Parser;
 use gevulot_shim::{Task, TaskResult};
-use gevulot_test::{cli, proof_logic};
+use prover::{cli, proof_logic};
 
 fn main() -> Result<(), Box<dyn Error>> {
     gevulot_shim::run(run_task)

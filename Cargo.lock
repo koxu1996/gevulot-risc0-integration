@@ -849,21 +849,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gevulot-test"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "bincode",
- "clap",
- "gevulot-shim",
- "hex",
- "risc0-zkvm",
- "serde",
- "serde_json",
- "thiserror",
-]
-
-[[package]]
 name = "gimli"
 version = "0.28.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1621,6 +1606,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c7ac8852baeb3cc6fb83b93646fb93c0ffe5d14bf138c945ceb4b9948ee0e3c1"
 dependencies = [
  "autotools",
+]
+
+[[package]]
+name = "prover"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bincode",
+ "clap",
+ "gevulot-shim",
+ "hex",
+ "risc0-zkvm",
+ "serde",
+ "serde_json",
+ "thiserror",
 ]
 
 [[package]]
