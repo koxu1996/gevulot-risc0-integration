@@ -16,7 +16,7 @@ fn run_task(task: Task) -> Result<TaskResult, Box<dyn Error>> {
     // -----------------------------------------------------------------------
     // Here would be the control logic to run the prover with given arguments.
     // -----------------------------------------------------------------------
-    proof_logic();
+    proof_logic("TODO", "TODO", "TODO").unwrap();
 
     // Write generated proof to a file.
     std::fs::write("/workspace/proof.dat", b"this is a proof.")?;
