@@ -22,7 +22,7 @@ fn main() {
         .build()
         .unwrap();
 
-    // Obtain the default prover.
+    // Obtain default prover.
     let prover = default_prover();
 
     // Produce a receipt by proving the specified ELF binary.
@@ -30,21 +30,16 @@ fn main() {
     let receipt = prover.prove_elf(env, SQUARE_CHECK_GUEST_ELF).unwrap();
 
     // Store receipt.
-    let seal_bytes = &receipt
-        .inner
-        .flat()
-        .unwrap()
-        .first()
-        .unwrap()
-        .get_seal_bytes();
-    write_u8_bytes_to_file("./output/receipt_seal", &seal_bytes);
+    let inner_bytes = bincode::serialize(&receipt.inner).unwrap();
+    write_u8_bytes_to_file("./output/receipt_inner", &inner_bytes);
 
     // Serlialize journal - second half of receipt.
-    let journal_bytes = &receipt.journal.bytes;
+    let journal_bytes = bincode::serialize(&receipt.journal).unwrap();
     write_u8_bytes_to_file("./output/receipt_journal", &journal_bytes);
 
     let method_digest: Digest = SQUARE_CHECK_GUEST_ID.into();
-    write_u8_bytes_to_file("./output/receipt_method", &method_digest.as_bytes());
+    let method_bytes = bincode::serialize(&method_digest).unwrap();
+    write_u8_bytes_to_file("./output/receipt_method", &method_bytes);
 }
 
 /// Writes a content to a file at the given path.
