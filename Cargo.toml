@@ -3,5 +3,13 @@ name = "gevulot-test"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "prover_gevulot"
+path = "src/bin/prover_gevulot.rs"
+
+[[bin]]
+name = "prover_offchain"
+path = "src/bin/prover_offchain.rs"
+
 [dependencies]
 gevulot-shim = { git = "https://github.com/gevulotnetwork/gevulot", package = "gevulot-shim" }

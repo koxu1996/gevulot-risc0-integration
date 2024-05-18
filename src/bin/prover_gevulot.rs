@@ -1,6 +1,7 @@
 use std::{error::Error, result::Result};
 
 use gevulot_shim::{Task, TaskResult};
+use gevulot_test::proof_logic;
 
 fn main() -> Result<(), Box<dyn Error>> {
     gevulot_shim::run(run_task)
@@ -15,6 +16,7 @@ fn run_task(task: Task) -> Result<TaskResult, Box<dyn Error>> {
     // -----------------------------------------------------------------------
     // Here would be the control logic to run the prover with given arguments.
     // -----------------------------------------------------------------------
+    proof_logic();
 
     // Write generated proof to a file.
     std::fs::write("/workspace/proof.dat", b"this is a proof.")?;
