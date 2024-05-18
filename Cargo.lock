@@ -852,6 +852,7 @@ dependencies = [
 name = "gevulot-test"
 version = "0.1.0"
 dependencies = [
+ "bincode",
  "clap",
  "gevulot-shim",
  "hex",

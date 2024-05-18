@@ -12,6 +12,7 @@ name = "prover_offchain"
 path = "src/bin/prover_offchain.rs"
 
 [dependencies]
+bincode = "1.3.3"
 clap = { version = "4.5.4", features = ["derive"] }
 gevulot-shim = { git = "https://github.com/gevulotnetwork/gevulot", package = "gevulot-shim" }
 hex = "0.4.3"

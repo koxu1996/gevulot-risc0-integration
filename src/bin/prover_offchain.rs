@@ -48,27 +48,30 @@ fn main() {
 
     let guest_elf = get_file_as_byte_vec(&args.guest);
 
+    // Encoding input.
+    // println!(
+    //     "{}",
+    //     hex::encode(bincode::serialize(&(1787569 as u32)).unwrap())
+    // );
+    // println!(
+    //     "{}",
+    //     hex::encode(bincode::serialize(&(1337 as u32)).unwrap())
+    // );
+
+    // Build env from input args.
+    let mut env_builder = ExecutorEnv::builder();
     match read_json_file(&args.input) {
         Ok(hex_strings) => match decode_hex_strings(hex_strings) {
             Ok(decoded_bytes_arrays) => {
-                for (index, bytes) in decoded_bytes_arrays.iter().enumerate() {
-                    println!("Decoded bytes for index {}: {:?}", index, bytes);
+                for (_index, bytes) in decoded_bytes_arrays.iter().enumerate() {
+                    env_builder.write_slice(bytes);
                 }
             }
             Err(e) => panic!("Failed to decode hex: {}", e),
         },
         Err(e) => panic!("Failed to read file: {}", e),
     }
-
-    let env = ExecutorEnv::builder()
-        .write(&(16 as u32))
-        .unwrap() // env.write_slice(arg1.serialize())
-        .write(&(4 as u32))
-        .unwrap()
-        // env.write_slice(arg2.serialize())
-        // env.write_slice(arg3.serialize())
-        .build()
-        .unwrap();
+    let env = env_builder.build().unwrap();
 
     // Obtain the default prover.
     let prover = default_prover();
