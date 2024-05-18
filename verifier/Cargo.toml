@@ -1,0 +1,25 @@
+[package]
+name = "verifier"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+
+[[bin]]
+name = "verifier"
+path = "bin/main.rs"
+
+[[bin]]
+name = "verifier_gevulot"
+path = "bin/main_gevulot.rs"
+
+[dependencies]
+anyhow = "1.0.86"
+bincode = "1.3.3"
+clap = { version = "4.5.4", features = ["derive"] }
+gevulot-shim = { git = "https://github.com/gevulotnetwork/gevulot", package = "gevulot-shim" }
+hex = "0.4.3"
+risc0-zkvm = { version = "0.21.0" }
+serde = "1.0.202"
+serde_json = "1.0.117"
+thiserror = "1.0.61"
