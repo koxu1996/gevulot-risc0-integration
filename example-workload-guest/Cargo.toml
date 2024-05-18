@@ -4,21 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [build-dependencies]
-risc0-build = { version = "0.19.1" }
+risc0-build = { version = "0.21.0" }
 
 [package.metadata.risc0]
 methods = ["guest"]
-
-# Always optimize; building and running the guest takes much longer without optimization.
-[profile.dev]
-opt-level = 3
-
-[profile.dev.build-override]
-opt-level = 3
-
-[profile.release]
-debug = 1
-lto = true
-
-[profile.release.build-override]
-opt-level = 3

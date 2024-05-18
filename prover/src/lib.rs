@@ -49,10 +49,12 @@ pub fn proof_logic(guest: &str, input: &str, output: &str) -> anyhow::Result<()>
     let prover = default_prover();
 
     // Produce a receipt by proving the specified ELF binary.
-    let receipt = prover.prove_elf(env, &guest_elf)?;
+    let receipt = prover.prove(env, &guest_elf)?;
 
     let receipt_bytes = bincode::serialize(&receipt)?;
     fs::write(output, receipt_bytes)?;
+
+    println!("OK!");
 
     Ok(())
 }

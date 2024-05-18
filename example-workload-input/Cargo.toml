@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-risc0-zkvm = { version = "0.19.1", default-features = false }
+risc0-zkvm = { version = "0.21.0", default-features = false }
 serde = { version = "1.0", default-features = false }
 bytemuck = { version = "1.16.0", default-features = false }
 hex = { version = "0.4.3", default-features = false }
