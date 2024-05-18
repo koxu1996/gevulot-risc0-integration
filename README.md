@@ -8,5 +8,6 @@ cargo build --release --target x86_64-unknown-linux-gnu
 ## Pack into unikernel
 
 ```sh
-ops build ./target/x86_64-unknown-linux-gnu/release/gevulot-test -c prover.json
+cp ./target/x86_64-unknown-linux-gnu/release/gevulot-test ./gevulot-test
+ops build ./gevulot-test -c prover.json
 ```
