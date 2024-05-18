@@ -1,26 +1,20 @@
 use std::{error::Error, result::Result};
 
+use clap::Parser;
 use gevulot_shim::{Task, TaskResult};
-use gevulot_test::proof_logic;
+use gevulot_test::{cli, proof_logic};
 
 fn main() -> Result<(), Box<dyn Error>> {
     gevulot_shim::run(run_task)
 }
 
-// The main function that executes the prover program.
+//Write proof into "/workspace/proof.dat"
+//
 fn run_task(task: Task) -> Result<TaskResult, Box<dyn Error>> {
-    // Display program arguments we received. These could be used for
-    // e.g. parsing CLI arguments with clap.
-    println!("prover: task.args: {:?}", &task.args);
+    let args = cli::Args::parse_from(&task.args);
 
-    // -----------------------------------------------------------------------
-    // Here would be the control logic to run the prover with given arguments.
-    // -----------------------------------------------------------------------
-    proof_logic("TODO", "TODO", "TODO").unwrap();
-
-    // Write generated proof to a file.
-    std::fs::write("/workspace/proof.dat", b"this is a proof.")?;
+    proof_logic(&args.guest, &args.input, &args.output).unwrap();
 
     // Return TaskResult with reference to the generated proof file.
-    task.result(vec![], vec![String::from("/workspace/proof.dat")])
+    task.result(vec![], vec![args.output])
 }
