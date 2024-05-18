@@ -1,8 +1,5 @@
 use clap::Parser;
 
-use std::fs::{self};
-use std::io::{self};
-
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 pub struct Args {

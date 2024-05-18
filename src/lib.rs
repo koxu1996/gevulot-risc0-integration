@@ -6,6 +6,7 @@ use serde_json::from_str;
 use std::fs::{self};
 
 pub mod cli;
+
 pub mod error;
 
 /// Reads the specified file into a byte vector.
