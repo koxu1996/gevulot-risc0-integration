@@ -35,5 +35,21 @@ $ cd ..
 ### Prepare input data
 
 ```sh
-$ cargo run --release -p example-workload-input > /tmp/workload-input.bin
+$ cargo run --release -p example-workload-input > /tmp/workload-input.json
+```
+
+### Run local prover
+
+This will make sure you have correct input, that can be proved.
+
+```sh
+cargo run -p prover --bin prover -- --guest /tmp/workload-guest.bin --input /tmp/workload-input.json --output /tmp/workload-receipt.bin
+```
+
+**NOTE:** This command might take a while, because it's generating proof locally on your machine.
+
+### Run local verifier
+
+```sh
+cargo run -p verifier --bin verifier -- --input /tmp/workload-receipt.json
 ```
