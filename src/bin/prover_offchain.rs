@@ -36,9 +36,10 @@ struct Args {
     /// Path to JSON with guest args.
     #[arg(short, long)]
     input: String,
-    // /// Destination path for saving proof.
-    // #[arg(short, long)]
-    // output: String,
+
+    /// Destination path for saving proof.
+    #[arg(short, long)]
+    output: String,
 }
 
 fn main() {
@@ -48,7 +49,7 @@ fn main() {
 
     let guest_elf = get_file_as_byte_vec(&args.guest);
 
-    // Encoding input.
+    // Encoding input. TODO: use risc0vm serde.
     // println!(
     //     "{}",
     //     hex::encode(bincode::serialize(&(1787569 as u32)).unwrap())
@@ -78,5 +79,7 @@ fn main() {
 
     // Produce a receipt by proving the specified ELF binary.
     let receipt = prover.prove_elf(env, &guest_elf).unwrap();
-    // println!("{:?}", receipt);
+
+    let receipt_bytes = bincode::serialize(&receipt).unwrap();
+    fs::write(args.output, receipt_bytes).expect("Unable to write file");
 }
