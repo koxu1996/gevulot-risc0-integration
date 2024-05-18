@@ -1,29 +1,12 @@
-## Compile prover program
+# [ZKHack] Gevulot - Risc0 integration
 
-```sh
-rustup target add x86_64-unknown-linux-gnu
-cargo build --release --target x86_64-unknown-linux-gnu
-```
+This is full integration of Risc0 zkVM with Gevulot project.
 
-## Pack into unikernel
+## Example usage
 
-```sh
-cp ./target/x86_64-unknown-linux-gnu/release/gevulot-test ./gevulot-test
-ops build ./gevulot-test -c prover.json
-```
+### Setup
 
-## Risc0 workload
-
-```sh
-cd ./risc0-hello-world
-cargo run --release
-```
-
----
-
-## Workload - offchain demo
-
-### Build Risc0 guest
+#### 1. Build Risc0 guest
 
 ```sh
 $ cd ./example-workload-guest
@@ -32,24 +15,36 @@ $ cp ./target/riscv-guest/riscv32im-risc0-zkvm-elf/release/square_check_guest /t
 $ cd ..
 ```
 
-### Prepare input data
+#### 2. Prepare input data
 
 ```sh
 $ cargo run --release -p example-workload-input > /tmp/workload-input.json
 ```
 
-### Run local prover
+### Running offchain
+
+#### 1. Run local prover
 
 This will make sure you have correct input, that can be proved.
 
 ```sh
-cargo run -p prover --bin prover -- --guest /tmp/workload-guest.bin --input /tmp/workload-input.json --output /tmp/workload-receipt.bin
+$ cargo run -p prover --bin prover -- --guest /tmp/workload-guest.bin --input /tmp/workload-input.json --output /tmp/workload-receipt.bin
 ```
 
 **NOTE:** This command might take a while, because it's generating proof locally on your machine.
 
-### Run local verifier
+#### 2. Run local verifier
 
 ```sh
-cargo run -p verifier --bin verifier -- --input /tmp/workload-receipt.json
+$ cargo run -p verifier --bin verifier -- --guest /tmp/workload-guest.bin --receipt /tmp/workload-receipt.bin
 ```
+
+It should print:
+
+```
+Valid: true
+```
+
+### Running on-chain with Gevulot!
+
+TODO
