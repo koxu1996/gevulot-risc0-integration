@@ -1,20 +1,19 @@
 #![no_main]
-// If you want to try std support, also update the guest Cargo.toml file
-#![no_std]  // std support is experimental
-
+#![no_std]
 
 use risc0_zkvm::guest::env;
 
 risc0_zkvm::guest::entry!(main);
 
 pub fn main() {
-    // TODO: Implement your guest code here
+    // Read inputs.
+    let public_input_square: u32 = env::read();
+    let private_input_root: u32 = env::read();
 
-    // read the input
-    let input: u32 = env::read();
+    // Main logic: check user provided valid square root.
+    let computed_square = private_input_root * private_input_root;
+    assert_eq!(computed_square, public_input_square);
 
-    // TODO: do something with the input
-
-    // write public output to the journal
-    env::commit(&input);
+    // Write public output to journal.
+    env::commit(&public_input_square);
 }

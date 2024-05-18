@@ -11,3 +11,10 @@ cargo build --release --target x86_64-unknown-linux-gnu
 cp ./target/x86_64-unknown-linux-gnu/release/gevulot-test ./gevulot-test
 ops build ./gevulot-test -c prover.json
 ```
+
+## Risc0 workload
+
+```sh
+cd ./risc0-hello-world
+cargo run --release
+```
