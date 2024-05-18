@@ -854,6 +854,7 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "gevulot-shim",
+ "hex",
  "risc0-zkvm",
  "serde",
  "serde_json",
