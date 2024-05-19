@@ -4,14 +4,21 @@ This is full integration of Risc0 zkVM with Gevulot project.
 
 ## TL;DR
 
+Prover / Verifier deployment:
+
 ```
-Prover / Verifier deployed correctly.
 Prover hash:c969b70e087dd2b12a414ea4c86d43f528d03544d3c01b4ec59003039005b1b3
 Verifier hash:87fc88961dfa36bf60bafedd25f02a09e33a0adf8435825f7a952aa677f82b03.
 Tx Hash:72c92afa6113e737ea4d4654ebbfc39826ba2a8a959e5ed8ad4916bad53fdaf9
 ```
 
+Example transaction:
+
 ![](./tx.gif)
+
+```
+Programs send to execution correctly. Tx hash:7b888735a0ca02ade387b9f5cfa78d93c3ee54be6b3fc0812f7bc24e4c96b72e
+```
 
 ---
 
