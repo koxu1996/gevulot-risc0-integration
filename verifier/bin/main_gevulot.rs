@@ -18,7 +18,13 @@ struct TaskOutputData {
 }
 
 fn run_task(task: Task) -> Result<TaskResult, Box<dyn Error>> {
-    let args = cli::Args::parse_from(&task.args);
+    // Synchronize argument parsing
+    let mut raw_args = vec!["dummy".to_string()];
+    for a in task.args.clone() {
+        raw_args.push(a);
+    }
+
+    let args = cli::Args::parse_from(&raw_args);
 
     let is_valid = verify_logic(&args.guest, &args.receipt);
 
