@@ -117,7 +117,7 @@ $ gevulot-cli --jsonurl "http://api.devnet.gevulot.com:9944" --keyfile /tmp/loca
 exec --tasks '[{"program":"c969b70e087dd2b12a414ea4c86d43f528d03544d3c01b4ec59003039005b1b3","cmd_args":[{"name":"--guest","value":"/workspace/workload-guest.bin"},{"name":"--input","value":"/workspace/workload-input.json"},{"name":"--output","value":"/workspace/workload-receipt.bin"}],"inputs":[{"Input":{"local_path":"1e7d80754b7f9f8cf0bc5b423feb03baacd4e2a533333581f0ab713a75e52afb","vm_path":"/workspace/workload-guest.bin","file_url":"https://storage.googleapis.com/gevulot-test/workload-guest.bin"}},{"Input":{"local_path":"e51bf918d5d85b49283a096ccb25afb0d2089fec2701b5d9f79437b58cd39660","vm_path":"/workspace/workload-input.json","file_url":"https://storage.googleapis.com/gevulot-test/workload-input.json"}}]},{"program":"87fc88961dfa36bf60bafedd25f02a09e33a0adf8435825f7a952aa677f82b03","cmd_args":[{"name":"--guest","value":"/workspace/workload-guest.bin"},{"name":"--receipt","value":"/workspace/workload-receipt.bin"}],"inputs":[{"Input":{"local_path":"1e7d80754b7f9f8cf0bc5b423feb03baacd4e2a533333581f0ab713a75e52afb","vm_path":"/workspace/workload-guest.bin","file_url":"https://storage.googleapis.com/gevulot-test/workload-guest.bin"}},{"Output":{"source_program":"c969b70e087dd2b12a414ea4c86d43f528d03544d3c01b4ec59003039005b1b3","file_name":"/workspace/workload-receipt.bin"}}]}]'
 ```
 
-**NOTE:** Pretty printed content of `--tasks` is available in `workload.json` in this repository.
+**NOTE:** Pretty printed content of `--tasks` is available in `example-workload.json` in this repository.
 
 That's all!
 
