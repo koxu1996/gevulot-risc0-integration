@@ -4,7 +4,8 @@
   },
   "Env": {
     "RUST_BACKTRACE": "1",
-    "RUST_LOG": "debug"
+    "RUST_LOG": "debug",
+    "RISC0_PROVER": "local"
   },
   "Program": "prover_gevulot",
   "Mounts": {
