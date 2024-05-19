@@ -1,4 +1,4 @@
-# [ZKHack Kraków] Gevulot - Risc0 integration ✅
+# [ZKHack Kraków] GevuRisc - Risc0 prover/verifier integration for Gevulot
 
 This is full integration of Risc0 zkVM with Gevulot project.
 
