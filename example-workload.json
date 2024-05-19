@@ -1,6 +1,6 @@
 [
   {
-    "program": "c969b70e087dd2b12a414ea4c86d43f528d03544d3c01b4ec59003039005b1b3",
+    "program": "34948922b107eaa8672b3315c830638fc98ade760780dd2f5d9406a14ef6c10a",
     "cmd_args": [
       { "name": "--guest", "value": "/workspace/workload-guest.bin" },
       { "name": "--input", "value": "/workspace/workload-input.json" },
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "program": "87fc88961dfa36bf60bafedd25f02a09e33a0adf8435825f7a952aa677f82b03",
+    "program": "891eece1d904f4948d6b84aa062d7462dd521f6361ed2b31ce703338ba31844c",
     "cmd_args": [
       { "name": "--guest", "value": "/workspace/workload-guest2.bin" },
       { "name": "--receipt", "value": "/workspace/workload-receipt.bin" }
@@ -39,7 +39,7 @@
       },
       {
         "Output": {
-          "source_program": "c969b70e087dd2b12a414ea4c86d43f528d03544d3c01b4ec59003039005b1b3",
+          "source_program": "34948922b107eaa8672b3315c830638fc98ade760780dd2f5d9406a14ef6c10a",
           "file_name": "/workspace/workload-receipt.bin"
         }
       }
