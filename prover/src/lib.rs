@@ -1,5 +1,9 @@
 use error::AppError;
-use risc0_zkvm::{default_prover, ExecutorEnv};
+use risc0_zkvm::ExecutorEnv;
+
+use risc0_zkvm::default_prover;
+// NOTE: Could be replaced with explicit local prover. Then `RISC0_PROVER=local` will be obsolete.
+//use risc0_zkvm::{LocalProver, Prover}
 
 use hex::decode as hex_decode;
 use serde_json::from_str;
