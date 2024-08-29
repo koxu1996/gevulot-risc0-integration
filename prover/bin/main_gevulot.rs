@@ -5,6 +5,10 @@ use gevulot_shim::{Task, TaskResult};
 use prover::{cli, proof_logic};
 
 fn main() -> Result<(), Box<dyn Error>> {
+    #[cfg(feature = "vsock")]
+    {
+        println!("\n!!! WARNING !!!\n-> Binary was compiled with `vsock` feature enabled - it will NOT work with *local* shim executor.\n");
+    }
     gevulot_shim::run(run_task)
 }
 
