@@ -320,9 +320,9 @@ dependencies = [
 
 [[package]]
 name = "async-trait"
-version = "0.1.80"
+version = "0.1.81"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca"
+checksum = "6e0c28dcc82d7c8ead5cb13beb15405b57b8546e93215673ff8ca0349a028107"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1020,18 +1020,20 @@ dependencies = [
 [[package]]
 name = "gevulot-common"
 version = "0.1.0"
-source = "git+https://github.com/gevulotnetwork/gevulot#3ec31e97393dfb6db9b1429f3f85fbd7e7c1a389"
+source = "git+https://github.com/gevulotnetwork/gevulot?branch=optional-file-based-task-to-shim#66d66ddf769888ef6a3aa369870585d2172df091"
 
 [[package]]
 name = "gevulot-shim"
 version = "0.1.0"
-source = "git+https://github.com/gevulotnetwork/gevulot#3ec31e97393dfb6db9b1429f3f85fbd7e7c1a389"
+source = "git+https://github.com/gevulotnetwork/gevulot?branch=optional-file-based-task-to-shim#66d66ddf769888ef6a3aa369870585d2172df091"
 dependencies = [
  "anyhow",
  "async-stream",
  "blake3",
  "gevulot-common",
  "prost 0.11.9",
+ "serde",
+ "serde_json",
  "tokio",
  "tokio-stream",
  "tokio-vsock",
@@ -2636,9 +2638,9 @@ dependencies = [
 
 [[package]]
 name = "tower-layer"
-version = "0.3.2"
+version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c20c8dbed6283a09604c3e69b4b7eeb54e298b8a600d4d5ecb5ad39de609f1d0"
+checksum = "121c2a6cda46980bb0fcd1647ffaf6cd3fc79a013de288782836f6df9c48780e"
 
 [[package]]
 name = "tower-service"
