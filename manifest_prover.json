@@ -5,7 +5,8 @@
   "Env": {
     "RUST_BACKTRACE": "1",
     "RUST_LOG": "debug",
-    "RISC0_PROVER": "local"
+    "RISC0_PROVER": "local",
+    "TMPDIR": "/workspace"
   },
   "Program": "prover_gevulot",
   "Mounts": {
